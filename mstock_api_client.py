@@ -66,7 +66,7 @@ class MStockAPI:
             login_response = response.json()
             self.logger.debug(f"Login response JSON: {login_response}")
             if login_response.get("status") != "success":
-                self.logger.error(f"Login failed: {login_response.get("message", "Unknown error")}")
+                self.logger.error(f"Login failed: {login_response.get(\"message\", \"Unknown error\")}")
                 return False
                 
             self.logger.info("Login successful, awaiting OTP.")
@@ -93,7 +93,7 @@ class MStockAPI:
             session_response = response.json()
             self.logger.debug(f"Session token response JSON: {session_response}")
             if session_response.get("status") != "success":
-                self.logger.error(f"Session token generation failed: {session_response.get("message", "Unknown error")}")
+                self.logger.error(f"Session token generation failed: {session_response.get(\"message\", \"Unknown error\")}")
                 return False
                 
             # Save access token
