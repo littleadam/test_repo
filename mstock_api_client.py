@@ -154,7 +154,7 @@ class MStockAPI:
             response_json = response.json()
             self.logger.debug(f"API response JSON: {response_json}")
             if response_json.get("status") != "success":
-                self.logger.error(f"API request failed: {response_json.get("message", "Unknown error")}")
+                self.logger.error(f"API request failed: {response_json.get(\"message\", \"Unknown error\")}")
                 return None
                 
             return response_json.get("data")
